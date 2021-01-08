@@ -21,13 +21,6 @@ export const getListByFilter = (users: any) => {
     };
 };
 
-export const getDetailListQuestion = (question: any) => {
-    return {
-        type: DETAIL_USERS_QUESTION,
-        payload: question,
-    };
-};
-
 export const fetchUsersPending = () => {
     return { type: FETCH_LIST_USERS_PENDING };
 };

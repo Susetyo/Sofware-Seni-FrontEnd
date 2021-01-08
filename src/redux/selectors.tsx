@@ -1,14 +1,4 @@
-import { getListByFilter, getDetailListQuestion } from "./actions";
-
-const filterWordsMoreThanOne = (words: any, question: string) => {
-    let find = false;
-    console.log(words);
-    words.map((word: any) => {
-        if (question.includes(word) == true) find = true;
-    });
-
-    return find;
-};
+import { getListByFilter } from "./actions";
 
 export const filterList = (text: string, store: any) => {
     return (dispatch) => {
@@ -30,16 +20,5 @@ export const filterList = (text: string, store: any) => {
             .catch((error) => {
                 console.log(error);
             });
-    };
-};
-
-export const detailListQuestion = (id: number, store: any) => {
-    return (dispatch) => {
-        console.log("number", id);
-        const findList = store.listQuestionsData.filter((listQuestion: any) => {
-            return listQuestion.id === id;
-        });
-        console.log("list", findList);
-        dispatch(getDetailListQuestion(findList[0]));
     };
 };
